@@ -31,18 +31,21 @@ class Api extends Controller
         'head' => 'head',
         'options' => 'options',
     ];
+
     /**
      * 允许访问的请求类型
      * @var string
      */
     public $restMethodList = 'get|post|put|delete|patch|head|options';
+
     /**
      * 默认不验证
      * @var bool
      */
     public $apiAuth = true;
-
+    
 	protected $request;
+
 	/**
      * 当前请求类型
      * @var string
