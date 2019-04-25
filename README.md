@@ -1,5 +1,5 @@
 ThinkPHP5 restfulapi
-===============
+====================
 
 基于ThinkPHP5 基础上开发的一个简单的restful api ，带权限验证等
 
@@ -115,5 +115,7 @@ cd 到项目根目录
 
 修改路由，注册一个资源路由：在route.php加入下面一行代码：
 Route::resource(':version/goods','api/:version.Goods'); 
+
+## 版权信息
 
 遵循Apache2开源协议发布，并提供免费使用。
