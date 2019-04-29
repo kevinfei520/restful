@@ -67,6 +67,7 @@ class Token extends Controller
 			$app_key = $this->request->param('app_key');
 			$app_secret = $this->request->param('app_secret');
 			$accessTokenInfo = $this->setAccessToken($app_key,$app_secret);
+			// var_dump($accessTokenInfo);die;
 			return $this->sendSuccess($accessTokenInfo);
 		} catch (\Exception $e) {
 			$this->sendError(500, 'server error!!', 500);

@@ -1,12 +1,3 @@
-ThinkPHP5 restfulapi
-====================
-
-基于ThinkPHP5 基础上开发的一个简单的restful api ，带权限验证等
-
-> ThinkPHP5的运行环境要求PHP5.4以上。
-
-详细开发文档参考 [ThinkPHP5完全开发手册](http://www.kancloud.cn/manual/thinkphp5)
-
 ## 目录结构
 
 初始的目录结构如下：
@@ -74,38 +65,7 @@ www  WEB部署目录（或者子目录）
 -  Oauth类中的具体请看代码
 -  生成access_token，缓存access_token等相关逻辑在v1/Token.php代码中，使用的是本地缓存，如果需要使用数据库或者redis请查询相关注释说明
 -  写的比较乱，直接看片段截图把。。。。
-## 相关流程截图
 
-### 流程图
-
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/accesstoken.png)
-
-### 截图
-
-- 用户类
-
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/user.png)
-
-- Api类
-
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/api1.png)
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/api2.png)
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/api3.png)
-
-- Oauth类
-
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/oauth.png)
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/oauth2.png)
-
-- v1/Token类
-
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/token.png)
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/token2.png)
-
-- 测试
-
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/test1.png)
-![](https://github.com/Leslin/thinkphp5-restfulapi/blob/master/screenshot/test2.png)
 
 ## 快速创建一个restful控制器
 
