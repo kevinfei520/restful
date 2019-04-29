@@ -11,9 +11,9 @@
 use think\Route;
 
 Route::resource(':version/user','api/:version.User');   //注册一个资源路由，对应restful各个方法
-Route::resource(':version/classroom','api/:version.Classroom');   //注册一个资源路由，对应restful各个方法
 Route::resource(':version/course','api/:version.Course');   //注册一个资源路由，对应restful各个方法
-Route::rule(':version/token/token','api/:version.Token/token');
+Route::resource(':version/classroom','api/:version.Classroom');   //注册一个资源路由，对应restful各个方法
+Route::rule(':version/token/token','api/:version.Token/token');		
 Route::miss('Error/index');
 
 return [

@@ -75,6 +75,7 @@ class Api extends Controller
      * 客户端信息
      */
     protected $clientInfo;
+    
 	/**
 	 * 控制器初始化操作
 	 */
