@@ -52,7 +52,7 @@ class Course extends Api
         $param = $this->clientInfo;
         foreach ($param as $key => $value) {
             if ( $key === 'access_token' ) {
-               unset( $param[$key] );
+                unset( $param[$key] );
             }else if ( $key === 'version' )  {
                 unset( $param[$key] );
             }

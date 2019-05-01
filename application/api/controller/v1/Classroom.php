@@ -45,6 +45,14 @@ class Classroom extends Api
     }
 
     /**
+     * 单条记录find
+     */
+    public function fans($id)
+    {   
+        return $id;
+    }
+
+    /**
      * post方式
      *
      * @param  \think\Request  $request
@@ -78,8 +86,5 @@ class Classroom extends Api
         return 'delete';
     }
 
-    public function fans($id)
-    {   
-        return $id;
-    }
+    
 }

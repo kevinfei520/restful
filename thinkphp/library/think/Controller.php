@@ -23,12 +23,16 @@ class Controller
      * @var \think\View 视图类实例
      */
     protected $view;
+
     /**
      * @var \think\Request Request实例
      */
+
     protected $request;
+
     // 验证失败是否抛出异常
     protected $failException = false;
+    
     // 是否批量验证
     protected $batchValidate = false;
 

@@ -65,7 +65,7 @@ class User extends Api
      * @param  int  $id
      * @return \think\Response
      */
-    public function read()
+    public function read( )
     {   
         $param = $this->clientInfo;
         $schoolcode = new Schoolcode();  

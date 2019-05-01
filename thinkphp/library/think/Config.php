@@ -15,6 +15,7 @@ class Config
 {
     // 配置参数
     private static $config = [];
+    
     // 参数作用域
     private static $range = '_sys_';
 
