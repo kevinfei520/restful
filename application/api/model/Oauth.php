@@ -17,7 +17,7 @@ class Oauth extends Model{
 	 * @return true|false
 	 */
 	public function checkAppkey($app_key,$app_secret)
-	{
+	{	
 		$where = array(
 			'app_key' => $app_key,
 			'app_secret' => $app_secret

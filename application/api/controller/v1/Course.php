@@ -57,7 +57,7 @@ class Course extends Api
                 unset( $param[$key] );
             }
         }
-        $info = ['room_no','room_name','school_id'];   //定义需要那些参数
+        $info = ['school_name','school_id'];   //定义需要那些参数
         $data = checkDigitalArr($info,$param);
         $course = new SchoolRoom();  
         $reply = $course->saveinfo($param);

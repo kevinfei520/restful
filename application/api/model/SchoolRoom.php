@@ -35,7 +35,7 @@ class SchoolRoom extends Model{
 	 * @param  array  $data  添加信息
 	 */
 	public function saveinfo($data){
-		$data['createtime'] = time();
+		$data['createtime'] = date('Y-m-d H:i:s',time()); //time();
 		$data['status'] = 0;
 		return $this->save($data);
 	}
