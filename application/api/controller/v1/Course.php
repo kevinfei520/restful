@@ -91,17 +91,12 @@ class Course extends Api
     {
         $param = $this->clientInfo;
         $course = new SchoolRoom(); 
-        $info = array(    //允许修改的字段
-               0 => 'room_no',
-               1 => 'room_name',
-               2 => 'school_id',
-        );
-        for ($i=0 ; $i < 3 ; $i++ ) { 
-            if ( array_key_exists( $info[$i], $param ) ) {
-               $data = $info[$i]; 
-            }
+        //允许修改的字段
+        $info = array(0=>'school_id',1=>'school_name');
+        $data = array();
+        foreach ($info as $key => $value) {
+            $data[$value] = $param[$value];
         }
-        $data = [ $data => $param[$data] ] ;
         $reply = $course->courseupdate($param['id'],$data);
         if ($reply === 0 ) {
             return $this->returnmsg(400202,'The modification failed, please check whether the parameters are correct or revise');
@@ -116,8 +111,21 @@ class Course extends Api
      * @return \think\Response
      */
     public function delete()
-    {
-        return 'delete';
+    {   
+        $param = $this->clientInfo;
+        $course = new SchoolRoom();
+        if(isset($param['id']) && !empty($param['id']))
+        {
+            $id = $param['id'];
+            $reply = $course->coursedelete($id);
+            if ($reply === 0 ) {
+                return $this->returnmsg(400202,'The modification failed, please check whether the parameters are correct or revise');
+            }else{
+                return $this->sendSuccess('删除成功');
+            }
+        }else{
+            return $this->returnmsg(400202,'The modification failed, please check whether the parameters are correct or revise');
+        }
     }
 
     public function fans($id)

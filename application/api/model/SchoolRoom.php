@@ -49,6 +49,17 @@ class SchoolRoom extends Model{
 		);
 		return $this->where($where)->update($data);
 	}
+
+	/**
+	 * 删除课程信息(此处为逻辑删除)
+	 */
+	public function coursedelete($id){
+		$where = array(
+			'id' => $id,
+		);
+		return $this->where($where)->update(['status'=>1]);
+	}
+
 	
 	
 }
