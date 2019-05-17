@@ -26,7 +26,8 @@ class Token extends Controller
 		'app_secret'     =>  'require'
     ];
     
-    public function index(){
+    public function index()
+    {
     }
     
     /**
@@ -67,7 +68,6 @@ class Token extends Controller
 			$app_key = $this->request->param('app_key');
 			$app_secret = $this->request->param('app_secret');
 			$accessTokenInfo = $this->setAccessToken($app_key,$app_secret);
-			// var_dump($accessTokenInfo);die;
 			return $this->sendSuccess($accessTokenInfo);
 		} catch (\Exception $e) {
 			$this->sendError(500, 'server error!!', 500);
@@ -97,9 +97,9 @@ class Token extends Controller
         //生成令牌
         $accessToken = self::buildAccessToken($app_key,$app_secret);
         $accessTokenInfo = [
+            'app_key' => $app_key,//用户信息
             'access_token' => $accessToken,//访问令牌
             'expires_in' => time() + Oauth2::$expires,//过期时间时间戳
-            'app_key' => $app_key,//用户信息
         ];
         self::saveAccessToken($accessTokenInfo, $app_key);
         return $accessTokenInfo;

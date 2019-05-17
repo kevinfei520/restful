@@ -23,12 +23,7 @@ class Oauth extends Model{
 			'app_secret' => $app_secret
 		);
 		$info = $this->where($where)->find();
-		$data = $info->data;
-		if($data == null) return false;
-		if($data['expires_in'] > time()){
-			return true;
-		}
-		return false;
+		return empty(($info->data)) ? false : true;
 	}
 	
 	/**

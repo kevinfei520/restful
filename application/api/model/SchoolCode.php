@@ -8,6 +8,13 @@ use think\Model;
 class SchoolCode extends Model{
 
 	/**
+	 * 获取用户列表
+	 */
+	public function list(){
+		return $this->select();
+	}
+
+	/**
 	 * 获取学校详细信息
 	 * @param    [int]     $id   [学校id]
 	 */

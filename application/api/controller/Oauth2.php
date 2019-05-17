@@ -61,7 +61,7 @@ class Oauth2
         try {
             $clientInfo = $request->param();
         } catch (Exception $e) {
-            return $this->returnmsg(402,$e.'Invalid authentication credentials');
+            return $this->returnmsg(402,$e.'Invalid authentication credentials.');
         }
         return $clientInfo;
     }

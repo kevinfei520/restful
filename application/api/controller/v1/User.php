@@ -28,7 +28,14 @@ class User extends Api
      */
     public function index()
     {
-        return 'index';
+        // return 'index';
+        $param = $this->clientInfo;
+        $schoolcode = new Schoolcode();  
+        $data = $schoolcode->list();
+        if ( empty($data) ) {
+            return $this->sendError(400302,'Sorry, there is no information yet！');
+        }
+        return $this->sendSuccess($data);
     }
 
     /**
@@ -65,11 +72,14 @@ class User extends Api
      * @param  int  $id
      * @return \think\Response
      */
-    public function read( )
+    public function read()
     {   
         $param = $this->clientInfo;
         $schoolcode = new Schoolcode();  
         $data = $schoolcode->info($param['id']);
+        if ( empty($data) ) {
+            return $this->sendError(400301,'Sorry，User information is empty！');
+        }
         return $this->sendSuccess($data);
     }
 
