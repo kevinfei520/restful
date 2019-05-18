@@ -18,7 +18,7 @@ class Oauth2
      *
      * @var int
      */
-    public static $expires = 72000;
+    public static $expires = 7200;
 
     /**
      * 客户端信息
