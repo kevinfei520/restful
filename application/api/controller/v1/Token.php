@@ -26,10 +26,6 @@ class Token extends Controller
 		'app_secret'     =>  'require'
     ];
     
-    public function index()
-    {
-    }
-    
     /**
      * 构造函数
      * 初始化检测请求时间，签名等

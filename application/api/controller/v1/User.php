@@ -39,6 +39,23 @@ class User extends Api
     }
 
     /**
+     * get方式
+     *
+     * @param  int  $id
+     * @return \think\Response
+     */
+    public function read()
+    {   
+        $param = $this->clientInfo;
+        $schoolcode = new Schoolcode();  
+        $data = $schoolcode->info($param['id']);
+        if ( empty($data) ) {
+            return $this->sendError(400301,'Sorry，User information is empty！');
+        }
+        return $this->sendSuccess($data);
+    }
+
+    /**
      * post方式
      *
      * @param  \think\Request  $request
@@ -46,7 +63,6 @@ class User extends Api
      */
     public function save()
     {   
-
         $param = $this->clientInfo;
         foreach ($param as $key => $value) {
             if ( $key === 'access_token' ) {
@@ -64,23 +80,6 @@ class User extends Api
         }else{
             return $this->sendSuccess('添加成功');
         }
-    }
-
-    /**
-     * get方式
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function read()
-    {   
-        $param = $this->clientInfo;
-        $schoolcode = new Schoolcode();  
-        $data = $schoolcode->info($param['id']);
-        if ( empty($data) ) {
-            return $this->sendError(400301,'Sorry，User information is empty！');
-        }
-        return $this->sendSuccess($data);
     }
 
     /**
@@ -124,8 +123,4 @@ class User extends Api
         return 'delete';
     }
 
-    public function fans($id)
-    {   
-        return $id;
-    }
 }

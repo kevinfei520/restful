@@ -14,6 +14,7 @@ use app\api\controller\UnauthorizedException;
  * 在所有子类中可以调用$this->clientInfo对象访问请求客户端信息，返回为一个数组
  * 在具体资源方法中，不需要再依赖注入，直接调用$this->request返回为请求具体信息的一个对象
  */
+
 /**
  * 课程相关接口
  */
@@ -42,6 +43,20 @@ class Course extends Api
     }
 
     /**
+     * get方式
+     *
+     * @param  int  $id
+     * @return \think\Response
+     */
+    public function read()
+    {   
+        $param = $this->clientInfo;
+        $course = new SchoolRoom();  
+        $data = $course->info($param['id']);
+        return $this->sendSuccess($data);
+    }
+
+    /**
      * post方式
      *
      * @param  \think\Request  $request
@@ -64,20 +79,6 @@ class Course extends Api
         if ($reply === 1) {
            return $this->sendSuccess('添加成功');
         }
-    }
-
-    /**
-     * get方式
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function read()
-    {   
-        $param = $this->clientInfo;
-        $course = new SchoolRoom();  
-        $data = $course->info($param['id']);
-        return $this->sendSuccess($data);
     }
 
     /**
@@ -104,6 +105,7 @@ class Course extends Api
             return $this->sendSuccess('修改成功');
         }
     }
+
     /**
      * delete方式
      *
@@ -128,8 +130,4 @@ class Course extends Api
         }
     }
 
-    public function fans($id)
-    {   
-        return $id;
-    }
 }
