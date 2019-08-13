@@ -1,4 +1,7 @@
 <?php
+/**
+ * Oauth2基类
+ */
 namespace app\api\controller;
 
 use app\api\controller\UnauthorizedException;

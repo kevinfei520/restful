@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ * 防火墙基类
  */
 namespace app\api\controller;
 

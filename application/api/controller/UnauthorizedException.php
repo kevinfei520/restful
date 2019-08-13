@@ -1,6 +1,6 @@
 <?php
 /**
- * 授权失败
+ * 授权失败类
  */
 namespace app\api\controller;
 
