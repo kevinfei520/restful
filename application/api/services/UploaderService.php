@@ -1,5 +1,5 @@
 <?php
-namespace app\api\controller\v1;
+namespace app\api\controller\services;
 
 use think\Request;
 use think\Response;
@@ -15,7 +15,7 @@ use app\api\controller\UnauthorizedException;
  */
 
 /**
- * 上传资源服务接口
+ * 上传资源服务类
  */
 class UploaderService extends Api
 {   
