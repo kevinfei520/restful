@@ -14,7 +14,6 @@ use think\Cache;
 */
 class Sms 
 {
-	
 	function __construct()
 	{
 		# code...

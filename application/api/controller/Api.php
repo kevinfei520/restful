@@ -4,15 +4,15 @@
  */
 namespace app\api\controller;
 
-use think\Controller;
-use think\Request;
 use think\Config;
+use think\Request;
 use think\Exception;
-use app\api\controller\Factory;
+use think\Controller;
 use app\api\controller\Send;
 use think\response\Redirect;
-use app\api\controller\UnauthorizedException;
+use app\api\controller\Factory;
 use app\api\controller\Oauth2 as Oauth2;
+use app\api\controller\UnauthorizedException;
 
 class Api extends Controller
 {	

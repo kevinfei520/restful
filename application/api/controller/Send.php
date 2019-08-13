@@ -9,7 +9,6 @@ use think\response\Redirect;
 
 trait Send
 {
-
     /**
      * 默认返回资源类型
      * @var string
