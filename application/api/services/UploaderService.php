@@ -1,5 +1,5 @@
 <?php
-namespace app\api\controller\services;
+namespace app\api\services;
 
 use think\Request;
 use think\Response;
@@ -41,91 +41,7 @@ class UploaderService extends Api
         }
     }
 
-    /**
-     * get方式
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function read()
-    {   
-        $param = $this->clientInfo;
-        $course = new SchoolRoom();  
-        $data = $course->info($param['id']);
-        return $this->sendSuccess($data);
-    }
-
-    /**
-     * post方式
-     *
-     * @param  \think\Request  $request
-     * @return \think\Responses
-     */
-    public function save()
-    {   
-        $param = $this->clientInfo;
-        foreach ($param as $key => $value) {
-            if ( $key === 'access_token' ) {
-               unset( $param[$key] );
-            }else if ( $key === 'version' )  {
-                unset( $param[$key] );
-            }
-        }
-        $info = ['room_no','room_name','school_id'];   //定义需要那些参数
-        $data = checkDigitalArr($info,$param);
-        $course = new SchoolRoom();  
-        $reply = $course->saveinfo($param);
-        if ($reply === 1) {
-           return $this->sendSuccess('添加成功');
-        }
-    }
-
-    /**
-     * PUT方式
-     *
-     * @param  \think\Request  $request
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function update()
-    {
-        $param = $this->clientInfo;
-        $course = new SchoolRoom(); 
-        $info = array(    //允许修改的字段
-               0 => 'room_no',
-               1 => 'room_name',
-               2 => 'school_id',
-        );
-        for ($i=0 ; $i < 3 ; $i++ ) { 
-            if ( array_key_exists( $info[$i], $param ) ) {
-               $data = $info[$i]; 
-            }
-        }
-        $data = [ $data => $param[$data] ] ;
-        $reply = $course->courseupdate($param['id'],$data);
-        if ($reply === 0 ) {
-            return $this->returnmsg(400202,'The modification failed, please check whether the parameters are correct or revise');
-        }else{
-            return $this->sendSuccess('修改成功');
-        }
-    }
     
-    /**
-     * delete方式
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function delete()
-    {
-        return 'delete';
-    }
-
-    public function fans($id)
-    {   
-        return $id;
-    }
-
     /**
      * 图片上传
      * @param $imginfo - 图片的资源，数组类型。['图片类型','图片大小','图片进行base64加密后的字符串']
