@@ -1,7 +1,6 @@
 ## 目录结构
 
 初始的目录结构如下：
-
 ~~~
 www  WEB部署目录（或者子目录）
 ├─application           应用目录
@@ -64,7 +63,6 @@ www  WEB部署目录（或者子目录）
 -  根据用户端传递过来的app_key获取缓存中的access_token，在进行对比，如果true，则可以调用user中的各种方法，否则返回不能调用原因
 -  Oauth类中的具体请看代码
 -  生成access_token，缓存access_token等相关逻辑在v1/Token.php代码中，使用的是本地缓存，如果需要使用数据库或者redis请查询相关注释说明
--  写的比较乱，直接看片段截图把。。。。
 
 
 ## 快速创建一个RESTful控制器
@@ -78,4 +76,4 @@ Route::resource(':version/goods','api/:version.Goods');
 
 ## 版权信息
 
-遵循Apache2开源协议发布，并提供免费使用。
+遵循Apache2开源协议发布，并提供免费使用。如需帮助请联系我。794783766
