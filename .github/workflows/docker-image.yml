@@ -1,4 +1,4 @@
-name: Docker Image CI Test RestFul Api 
+name: Test RestFul Api 
 
 on:
   push:
